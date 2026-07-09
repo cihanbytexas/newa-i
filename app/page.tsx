@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       
-      {/* Navigasyon (Basit Versiyon) */}
+      {/* Navigasyon */}
       <nav className="flex justify-between items-center mb-24 border-b border-border pb-6">
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-6 h-6 text-primary" />
@@ -31,19 +31,19 @@ export default function Home() {
       </header>
 
       {/* Arama ve Sekmeler Bölümü */}
-      <section className="bg-card border border-border rounded-2xl p-8 shadow-sm">
+      <section className="bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-hover transition-shadow duration-200">
         
         {/* Sekmeler */}
         <div className="flex flex-wrap gap-6 border-b border-border mb-8 pb-4">
-          <button className="flex items-center gap-2 text-sm font-semibold text-primary border-b-2 border-primary pb-4 -mb-[17px]">
+          <button className="flex items-center gap-2 text-sm font-semibold text-primary border-b-2 border-primary pb-4 -mb-[17px] relative z-10">
             <Search className="w-4 h-4" />
             Sistemde Ara
           </button>
-          <button className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors pb-4">
+          <button className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors pb-4 relative z-10">
             <MapPin className="w-4 h-4" />
             Haritalarda Ara
           </button>
-          <button className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors pb-4">
+          <button className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors pb-4 relative z-10">
             <Plus className="w-4 h-4" />
             Manuel Ekle
           </button>
@@ -55,8 +55,12 @@ export default function Home() {
             type="text" 
             placeholder="Sistemimizde kayıtlı iş yerlerini arayın..." 
             className="w-full bg-background border border-border rounded-xl py-4 pl-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+            autoComplete="off"
           />
-          <button className="absolute right-3 p-2 text-muted-foreground hover:text-primary transition-colors">
+          <button 
+            className="absolute right-3 p-2 text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Ara"
+          >
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
